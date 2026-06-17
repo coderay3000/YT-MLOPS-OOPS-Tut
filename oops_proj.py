@@ -1,9 +1,33 @@
-class chatboook:
+class chatbook:
+
+    __user_id=1
+
     def __init__(self):
+        self.id=chatbook.__user_id
+        chatbook.__user_id+=1
+        self.__name="Default user"
         self.username = ''
         self.password = ''
         self.loggedin = False
-        self.menu()
+        #self.menu()
+    
+
+    # you dent need self to access static method 
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    @staticmethod
+    def set_id(val):
+        chatbook.__user_id = val
+
+
+
+    def get_name(self):#getter
+        return self.__name
+    
+    def set_name(self,value):#setter
+        self.__name=value
+
 
     def menu(self):
         user_input = input("""Welcome to Chatbook [] How would you like to proceed?
@@ -70,5 +94,5 @@ class chatboook:
         print("\n")
         self.menu()
 
-user1S=chatboook()        
+#user1=chatboook()        
 
